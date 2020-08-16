@@ -30,9 +30,12 @@ Be sure to check the release page of Metasploit, and look for the new release yo
 the script need the release number version, you need to input it manually.
 This script is very easy to use, you just need to download the script and run it from your termux terminal.
 Nothing fancy, just a little colorful and a bit longer waiting time to finish.
+Tested on android 7.1 aarch64, use at your own risk if you want to test it on android <7.0.
+supported architecture :</br>
+[arm*] [aarch64] [i686] [x86_64]
 Without further ado, let's begin the procedure:
 
-It is better to put the files on your `home dir`
+It is better to put the files on your `home dir` </br>
 Clone the repository / download the installer :
 ```
 cd $HOME
