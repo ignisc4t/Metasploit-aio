@@ -1,5 +1,5 @@
 ## Metasploit-aio
-The lonenly bash script wrapper to installing Metasploit-Framework-Dev into android termux environment.
+The lonely bash script wrapper to installing Metasploit-Framework-Dev into android termux environment.
 
 ## Ideas
 I need something simple to make the magic happen over my phone, so here's the result; a single bash script to rule all the other commands inside.
