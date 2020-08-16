@@ -69,4 +69,8 @@ $PREFIX/opt/metasploit-framework/vendor/bundle
 $PREFIX/var/lib/postgresql
 ```
 
+## Things Doesn't work:
+- Rubocop didn't work here (unsolved mysteries)
+- still finding...
+
 - eNigma (@enigm4s)
