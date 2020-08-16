@@ -19,6 +19,10 @@ https://termux.com
 Termux package repository :
 https://github.com/termux/termux-packages
 
+The original scripts is on termux unstable packages repository :
+```
+https://github.com/termux/unstable-packages/tree/master/packages/metasploit
+```
 Head to their website / repository for more info about the programs and tools.
 
 ## How To
