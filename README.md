@@ -73,4 +73,5 @@ $PREFIX/var/lib/postgresql
 - Rubocop didn't work here (unsolved mysteries)
 - still finding...
 
-- eNigma (@enigm4s)
+## Curious termux user
+[x] eNigma (@enigm4s)
