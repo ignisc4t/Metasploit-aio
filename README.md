@@ -1,6 +1,17 @@
 ## Metasploit-aio
 The lonely bash script wrapper to installing Metasploit-Framework-Dev into android termux environment.
 
+## Changelog
+
+-- v1.0
+   - Re-write code
+   - using script with function for better maintaining
+   - added auto check the existing of msf archive
+   - auto checking android os before install
+   - auto fixer
+
+-- initial release
+
 ## Ideas
 I need something simple to make the magic happen over my phone, so here's the result; a single bash script to rule all the other commands inside.
 
