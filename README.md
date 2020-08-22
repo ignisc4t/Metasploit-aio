@@ -1,7 +1,19 @@
 ## Metasploit-aio
 The lonely bash script wrapper to installing Metasploit-Framework-Dev into android termux environment.
 
+## Supported android
+OS Supported :
+- Android 5.0, 5.1, 6.0, 6.1
+- Android 7.0, 7.1*, 8.0, 8.1
+- I'm not sure with Android 9-10, but you can test it.
+
 ## Changelog
+
+-- v1.0-rev
+   - fixing some function logic
+   - auto skip download if there is metasploit-x.x.x.tar.gz</br> found in `/usr/tmp`
+   - fix postgresql
+   - just like that, nothing special...
 
 -- v1.0
    - Re-write code
