@@ -14,6 +14,9 @@ The lonely bash script wrapper to installing Metasploit-Framework-Dev into andro
 
 ## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200821-184853.png)
 
+example, Metasploit 6.0.0-dev : 
+<p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200822-163033.png)
+
 ## Ideas
 I need something simple to make the magic happen over my phone, so here's the result; a single bash script to rule all the other commands inside.
 
@@ -63,7 +66,8 @@ cd Metasploit-aio
 chmod +x metasploit-aio.sh
 ./metasploit-aio.sh
 ```
-follow the instruction in the script.
+follow the instruction in the script. enter metasploit version manually</br>
+e.g. 5.0.99 or 6.0.2 etc.
 
 or
 ```
@@ -73,7 +77,7 @@ chmod +x metasploit-aio.sh
 ./metasploit-aio.sh
 ```
 follow the instruction in the script.
-Don't forget, you need to specifically input the metasploit version (e.g. 6.0.0)
+Don't forget, you need to specifically input the metasploit version (e.g. 5.0.99 or 6.0.0 etc)
 
 ## Contributing
 any pull request are welcome, I do realize my script is not perfect. any suggestion for better script will be accepted.
