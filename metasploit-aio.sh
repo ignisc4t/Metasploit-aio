@@ -38,9 +38,9 @@ function useraio() {
 
 ## Getting android version
 function aosver() {
-echo -e "${tylo}[√] $(uname -m)${tcyn} detected"
-echo -e "${tylo}[?]${tcyn} Checking android version..."
-aos=$(getprop ro.build.version.release)
+    echo -e "${tylo}[√] $(uname -m)${tcyn} detected"
+    echo -e "${tylo}[?]${tcyn} Checking android version..."
+    aos=$(getprop ro.build.version.release)
 }
 
 ## Folding message
@@ -121,7 +121,7 @@ function msffbuildg() {
     echo -e "${tred}[!]${tcyn} (it'll be a long time wait, you better do something with your time)."
     cd "$PREFIX"/opt/metasploit-framework
     gem install --no-document --verbose bundler
-    bundle config.nokogiri --use-system-libraries
+    bundle config build.nokogiri --use-system-libraries
     bundle install --deployment --jobs=2 --verbose
 }
 
