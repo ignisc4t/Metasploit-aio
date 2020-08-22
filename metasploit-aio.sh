@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # [@]eNigm4
 ###=============================================###
-## Android Termux Metasploit-AIO Installer v1.0
+## Android Termux Metasploit-AIO Installer v1.1-rev
 ###=============================================###
 
 ## Color set - Make it a little colorful
@@ -67,12 +67,16 @@ function msffver() {
     echo -e "$tred[!]${tylo} Enter Metasploit version (e.g. 5.0.98 or 6.0.0): "
     read MSFVER
     echo -e "${tylo}[OK]${tred} Metasploit-$MSFVER.tar.gz${tcyn} will be installed."
-    echo -e "${tylo}[*]${tcyn} Downloading Metasploit-Framework-$MSFVER-dev..."
-    mkdir -p "$TMPDIR"
-    rm -rf "$TMPDIR"/metasploit-*
-    msffcurl
-    curl -L "https://github.com/rapid7/metasploit-framework/archive/$MSFVER.tar.gz" -o "$TMPDIR/metasploit-$MSFVER.tar.gz"
-    msffdown;
+    if [ -f $TMPDIR/metasploit-$MSFVER.tar.gz ] ; then
+        echo -e "${tylo}[√]${tcyn} Found metasploit-$MSFVER.tar.gz, proceed with installing..."
+    else
+        echo -e "${tylo}[*]${tcyn} Downloading Metasploit-Framework-$MSFVER-dev..."
+        mkdir -p "$TMPDIR"
+        rm -rf "$TMPDIR"/metasploit-*
+        msffcurl;
+        curl -L "https://github.com/rapid7/metasploit-framework/archive/$MSFVER.tar.gz" -o "$TMPDIR/metasploit-$MSFVER.tar.gz"
+        msffdown;
+    fi
 }
 
 ## Checking Metasploit download
@@ -152,17 +156,26 @@ function msffpgsql() {
     sleep 0.5
 
     echo -e "${tylo}[*]${tcyn} Setting Postgresql database..."
-    mkdir -p "$PREFIX"/var/lib/postgresql
-    pg_ctl -D "$PREFIX"/var/lib/postgresql stop
-    if ! pg_ctl -D "$PREFIX"/var/lib/postgresql start --silent; then
-        initdb "$PREFIX"/var/lib/postgresql
+    if [ -d $PREFIX/var/lib/postgresql ] ; then
         pg_ctl -D "$PREFIX"/var/lib/postgresql start --silent
-    fi
-    if [ -z "$(psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='msf'")" ]; then
-        createuser msf
-    fi
-    if [ -z "$(psql -l | grep msf_database)" ]; then
-        createdb msf_database
+    else
+        mkdir -p "$PREFIX"/var/lib/postgresql
+        if [ -f $PREFIX/var/lib/postgresql/postmaster.pid ] ; then
+            pg_ctl -D "$PREFIX"/var/lib/postgresql stop --silent
+        elif [ -f $PREFIX/tmp/.s.PGSQL.* ] ; then
+            pg_ctl -D "$PREFIX"/var/lib/postgresql stop --silent
+        else
+            if ! pg_ctl -D "$PREFIX"/var/lib/postgresql start --silent; then
+                initdb "$PREFIX"/var/lib/postgresql
+                pg_ctl -D "$PREFIX"/var/lib/postgresql start --silent
+            fi
+            if [ -z "$(psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='msf'")" ]; then
+                createuser msf
+            fi
+            if [ -z "$(psql -l | grep msf_database)" ]; then
+                createdb msf_database
+            fi
+        fi
     fi
 }
 
@@ -338,9 +351,9 @@ case "$aos" in
         printf %b "${tblu}[×××××××××××××××××××××××××××××××××>                ]${twht}[ 70%]\n" ; sleep 0.25
         msffixer;
         printf %b "${tblu}[××××××××××××××××××××××××××××××××××××××××>         ]${twht}[ 85%]\n" ; sleep 0.25
-        msffpgsql;
-        printf %b "${tblu}[×××××××××××××××××××××××××××××××××××××××××××××××>  ]${twht}[ 95%]\n" ; sleep 0.25
         msffconsfix7;
+        printf %b "${tblu}[×××××××××××××××××××××××××××××××××××××××××××××××>  ]${twht}[ 95%]\n" ; sleep 0.25
+        msffpgsql;
         printf %b "${tblu}[××××××××××××××××××××××××××××××××××××××××××××××××××]${twht}[100%]\n" ; sleep 0.25
         ;;
     5|5.0|5.1|6|6.0|6.0.1)
@@ -357,9 +370,9 @@ case "$aos" in
         printf %b "${tblu}[×××××××××××××××××××××××××××××××××>                ]${twht}[ 70%]\n" ; sleep 0.25
         msffixer;
         printf %b "${tblu}[××××××××××××××××××××××××××××××××××××××××>         ]${twht}[ 85%]\n" ; sleep 0.25
-        msffpgsql;
-        printf %b "${tblu}[×××××××××××××××××××××××××××××××××××××××××××××××>  ]${twht}[ 95%]\n" ; sleep 0.25
         msffconsfix6;
+        printf %b "${tblu}[×××××××××××××××××××××××××××××××××××××××××××××××>  ]${twht}[ 95%]\n" ; sleep 0.25
+        msffpgsql;
         printf %b "${tblu}[××××××××××××××××××××××××××××××××××××××××××××××××××]${twht}[100%]\n" ; sleep 0.25
         ;;
 esac
