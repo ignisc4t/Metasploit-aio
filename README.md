@@ -45,17 +45,23 @@ This script is very easy to use, you just need to download the script and run it
 Nothing fancy, just a little colorful and a bit longer waiting time to finish.
 Tested on android 7.1 aarch64, use at your own risk if you want to test it on android <7.0.
 supported architecture :</br>
-[arm*] [aarch64] [i686] [x86_64]
+[arm*] [aarch64] [i686] [x86_64]</br>
 Without further ado, let's begin the procedure:
 
-It is better to put the files on your `home dir` </br>
+note: if you're getting error while running the script, please do:
+```
+apt install termux-exec
+```
+then run the script again.
+
+It is better to put the files on your `/home dir` </br>
 Clone the repository / download the installer :
 ```
 cd $HOME
 git clone https://github.com/enigm4s/Metasploit-aio.git
 cd Metasploit-aio
 chmod +x metasploit-aio.sh
-./metasploit-aio
+./metasploit-aio.sh
 ```
 follow the instruction in the script.
 
