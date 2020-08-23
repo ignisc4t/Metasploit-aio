@@ -16,6 +16,7 @@ tblu="$(tput bold)$(tput setaf 4)"
 tmgt="$(tput bold)$(tput setaf 5)"
 tcyn="$(tput bold)$(tput setaf 6)"
 twht="$(tput bold)$(tput setaf 7)"
+bdr=$(echo ${tmgt}"[=]"${tylo})
 
 ## Function block-start here
 ###=============================================###
@@ -281,45 +282,59 @@ function msffconsfix6() {
 clear;
 echo "${tgrn}
                                                         
-   ##   #                    #     #        #   #   #   
-   ##  ##     #              #       #     # #  #  # #  
-   ##  ##  #  ##  #   # ###  #  #  # ##    # #  # #   # 
-   # ## # ### #   ## #  #  # # # # # #     ###  # #   # 
-   # ## # #   #  # # ## #  # # # # # #    #   # #  # #  
-   ### ##  ## ##  ## #  ###  #  #  # ##   #  ## #   #   
-                        #                               
-                        ##
-                                                  ${tred}v1.0
-                                                  ${tylo}[@]eNigm4
+         ##   #                    #     #        #   #   #   
+         ##  ##     #              #       #     # #  #  # #  
+         ##  ##  #  ##  #   # ###  #  #  # ##    # #  # #   # 
+         # ## # ### #   ## #  #  # # # # # #     ###  # #   # 
+         # ## # #   #  # # ## #  # # # # # #    #   # #  # #  
+         ### ##  ## ##  ## #  ###  #  #  # ##   #  ## #   #   
+                              #                               
+                              ##
+                                                    ${tred}v1.0
+                                                    ${tylo}[@]eNigm4
 "
 
 ## Pre Message II
-echo -e "${tred}[!]${tylo} PLEASE READ THIS BEFORE YOU PROCEED!"
-sleep 1
-{
-        echo
-        echo -e "${tred}[!] Disclaimer :${tylo} Use this scripts at your own risk, this scripts doesn't guarrantee if Metasploit will working on your Termux environment!! It will download Metasploit source and tried to install on your android device. If you're had a doubt or installing some scripts then never use it, leave this script immediately by choose 'no' at the start of this script."
-        echo
-        echo -e "Files will be downloaded from the original repository of Metasploit ${tcyn}https://github.com/rapid7/metasploit-framework.${tylo} Then it will begin the installation procedure on your device."
-        echo
-        echo -e "Please, Don't ask neither Metasploit (rapid7) nor Termux developer for assistance, Termux${tred} 'IS NOT'${tylo} officially supported by Metasploit. You're on your own."
-        echo
-        echo -e "FYI: Metasploit also available on Termux unstable-repo, just in case if you wondering. Refer to termux wiki for installation guide. ;)"
-        echo
-        echo -e "${tred}     You've been warned!!${tylo}"
-        echo
-        echo -e "The original metasploit installer scripts provided in Termux unstable-packages repository at Github:"
-        echo -e "${tcyn}https://github.com/termux/unstable-packages/tree/master/packages/metasploit.${tylo} Credits belong to Rapid7 and Termux Apps Developer for making this possible."
-        echo
-echo
-} | fold -s -w "$FOLD_COLUMNS"
+echo "
+${bdr}           ${tred}[!]${tylo}PLEASE READ THIS BEFORE YOU PROCEED!${tred}[!]          ${bdr}
+${bdr}                                                               ${bdr}
+${bdr} ${tred}[!] Disclaimer : ${tylo}${U}Use this scripts at ${tred}'YOUR OWN RISK'${Ut}          ${bdr}
+${bdr}                                                               ${bdr}
+${bdr} This scripts doesn't guarrantee if Metasploit will working    ${bdr}
+${bdr} on your Termux environment!! It will download Metasploit      ${bdr}
+${bdr} source and tried to install on your android device. If you're ${bdr}
+${bdr} had a doubt or installing some scripts then never use it,     ${bdr}
+${bdr} leave this script immediately by choose 'No' at the beginning ${bdr}
+${bdr} of this script.                                               ${bdr}
+${bdr}                                                               ${bdr}
+${bdr} Files will be downloaded from the original repository of      ${bdr}
+${bdr} Metasploit ${tcyn}https://github.com/rapid7/metasploit-framework.${tylo}    ${bdr}
+${bdr} ${tylo}Then it will begin the installation procedure on your device  ${bdr}
+${bdr}                                                               ${bdr}
+${bdr} Please, Don't ask neither Metasploit (Rapid7) nor Termux deve ${bdr}
+${bdr} -eloper for assistance, Termux ${tred}'IS NOT'${tylo} officially supported  ${bdr}
+${bdr} by Metasploit. You're on your own.                            ${bdr}
+${bdr}                                                               ${bdr}
+${bdr} FYI: Metasploit also available on Termux unstable-repo, just  ${bdr}
+${bdr} in case if you wondering. Refer to termux wiki for installing ${bdr}
+${bdr} guide. ;)                                                     ${bdr}
+${bdr} ${tred}                     You've been warned!!${tylo}                     ${bdr}
+${bdr} The original metasploit installer scripts provided in Termux  ${bdr}
+${bdr} unstable-packages repository at Github:                       ${bdr}
+${bdr} ${tcyn}github.com/termux/unstable-packages/tree/master/packages/meta ${tylo}${bdr}
+${bdr} ${tcyn}sploit. ${tylo}Credits belong to Rapid7 and Termux Apps Developer    ${bdr}
+${bdr} for making this possible.                                     ${bdr}
+${bdr}                                                               ${bdr}
+${bdr}                                             ${tgrn}Metasploit-AIO${tylo}    ${bdr}
+${bdr}                                                     ${tgrn}eNigm4${tylo}    ${bdr}
+"
 
 ###=============================================###
 ### Main Program Start here
 ###=============================================###
 ## Starting point
 while true; do
-    echo -e "${tylo} Press 'Y' to install, 'N' to exit, then press enter.${tcyn}"
+    echo -e "${tylo}Press 'Y' to install, 'N' to exit, then press enter.${tcyn}"
     read -p "[!] Do you want to install it ? [y/n] " yn
     case $yn in
         [Yy]* ) break;;
