@@ -25,6 +25,7 @@ OS Supported :
 -- initial release
 
 ## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200823-190512.png)
+## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200828-114059.png)
 example, Metasploit 6.0.0-dev : 
 ## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200822-163033.png)
 
