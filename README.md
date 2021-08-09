@@ -24,10 +24,10 @@ OS Supported :
 
 -- initial release
 
-## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200823-190512.png)
-## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200828-114059.png)
+## <p align="center">![Screenshot](https://github.com/ignisc4t/Metasploit-aio/blob/master/Screenshot_20200823-190512.png)
+## <p align="center">![Screenshot](https://github.com/ignisc4t/Metasploit-aio/blob/master/Screenshot_20200828-114059.png)
 example, Metasploit 6.0.0-dev : 
-## <p align="center">![Screenshot](https://github.com/enigm4s/Metasploit-aio/blob/master/Screenshot_20200822-163033.png)
+## <p align="center">![Screenshot](https://github.com/ignisc4t/Metasploit-aio/blob/master/Screenshot_20200822-163033.png)
 
 ## Ideas
 I need something simple to make the magic happen over my phone, so here's the result; a single bash script to rule all the other commands inside.
@@ -73,7 +73,7 @@ It is better to put the files on your `/home dir` </br>
 Clone the repository / download the installer :
 ```
 cd $HOME
-git clone https://github.com/enigm4s/Metasploit-aio.git
+git clone https://github.com/ignisc4t/Metasploit-aio.git
 cd Metasploit-aio
 chmod +x metasploit-aio.sh
 ./metasploit-aio.sh
@@ -84,7 +84,7 @@ e.g. 5.0.99 or 6.0.2 etc.
 or
 ```
 cd $HOME
-curl -LO https://raw.githubusercontent.com/enigm4s/Metasploit-aio/master/metasploit-aio.sh
+curl -LO https://raw.githubusercontent.com/ignisc4t/Metasploit-aio/master/metasploit-aio.sh
 chmod +x metasploit-aio.sh
 ./metasploit-aio.sh
 ```
@@ -108,5 +108,7 @@ $PREFIX/var/lib/postgresql
 - Rubocop didn't work here (unsolved mysteries)
 - still finding...
 
-## Curious termux user
-[x] eNigma (@enigm4s)
+## Curious user
+[x] @ignisc4t
+
+- no longer updating this repo -
